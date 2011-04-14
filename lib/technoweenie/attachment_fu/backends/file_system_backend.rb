@@ -69,7 +69,7 @@ module Technoweenie # :nodoc:
         # Gets the public path to the file
         # The optional thumbnail argument will output the thumbnail's filename.
         def public_filename(thumbnail = nil)
-          full_filename(thumbnail).gsub %r(^#{Regexp.escape(base_path)}), ''
+          full_filename(thumbnail).gsub %r(^#{Regexp.escape(base_path)}), attachment_options[:public_prefix].to_s
         end
       
         def filename=(value)
