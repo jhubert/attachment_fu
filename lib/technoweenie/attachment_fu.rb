@@ -110,6 +110,8 @@ module Technoweenie # :nodoc:
         end
         attachment_options[:path_prefix]   = attachment_options[:path_prefix][1..-1] if options[:path_prefix].first == '/'
 
+        attachment_options[:public_prefix] ||= ''
+
         association_options = { :foreign_key => 'parent_id' }
         if attachment_options[:association_options]
           association_options.merge!(attachment_options[:association_options])
